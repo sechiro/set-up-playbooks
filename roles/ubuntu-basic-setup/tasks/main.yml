@@ -1,0 +1,21 @@
+---
+# tasks file for roles/ubuntu-init
+- name: Install basic packages
+  sudo: yes
+  apt:
+    name:
+      - vim
+      - git
+
+- name: Set vim as default editor
+  sudo: yes
+  shell: update-alternatives --set editor /usr/bin/vim.basic && touch /var/tmp/editor
+  args:
+    creates: /var/tmp/editor
+
+- name: Set nopass sudo for default user
+  sudo: yes
+  template:
+    src: nopasssudo.j2
+    dest: /etc/sudoers.d/{{ all.default.username }}
+    validate: 'visudo -cf %s'

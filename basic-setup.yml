@@ -1,0 +1,4 @@
+- name: Basic setup
+  hosts: localhost
+  roles:
+    - ubuntu-basic-setup

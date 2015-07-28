@@ -1,0 +1,4 @@
+- name: Install Openvpn
+  hosts: localhost
+  roles:
+    - openvpn

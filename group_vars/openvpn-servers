@@ -1,0 +1,10 @@
+openvpn:
+  protocol: tcp
+  port: 443
+  network: 10.249.0.0
+  netmask: 255.255.255.0
+  homenet: 192.168.10.0
+  homenetmask: 255.255.255.0
+  serverhost: home.sechiro.click
+  clientname: client2
+
